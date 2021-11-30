@@ -1,0 +1,144 @@
+================================================================================================
+						issue-01
+тесты для функции encode с использованием doctest
+================================================================================================
+Команда для запуска: ">python -m doctest -v morse.py"
+
+Результат работы тестов:
+========================================= test session starts ==================================
+Trying:
+    from morse import encode
+Expecting nothing
+ok
+Trying:
+    encode('AVITO ANALITYCS ACADEMY 2021')
+Expecting:
+    '.- ...- .. - ---   .- -. .- .-.. .. - -.-- -.-. ...   .- -.-. .- -.. . -- -.--   ..--- ----- ..--- .----'
+ok
+Trying:
+    encode('PYTHON IS A CAPITAL')
+Expecting:
+    '.--. -.-- - .... --- -.   .. ...   .-   -.-. .- .--. .. - .- .-..'
+ok
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('avito') # doctest: +ELLIPSIS
+Expecting:
+    Traceback (most recent call last):
+    ...
+    KeyError: 'a'
+ok
+2 items had no tests:
+    morse
+    morse.decode
+1 items passed all tests:
+   5 tests in morse.encode
+5 tests in 3 items.
+5 passed and 0 failed.
+Test passed.
+
+
+================================================================================================
+						issue-02
+Тесты для функции decode с использованием pytest.mark.parametrize
+================================================================================================
+Команда для запуска: ">python -m pytest test_morse.py"
+
+Результат работы тестов:
+========================================= test session starts ==================================
+platform win32 -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\zorka\PycharmProjects\pt_test\python_hw5
+plugins: anyio-2.1.0, Faker-8.8.1
+collected 3 items  
+
+test_morse.py ...  [100%]
+=========================================== 3 passed in 0.11s ==================================
+
+================================================================================================
+						issue-03
+Тесты для функции what_is_year_now с использованием unittest
+================================================================================================
+Команда для запуска: ">python test_ohe_unittest.py"
+
+Результат работы тестов:
+========================================= test session starts ==================================
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+
+
+================================================================================================
+						issue-04
+Тесты для функции fit_transform с использованием pytest
+================================================================================================
+Команда для запуска: ">python -m pytest test_ohe.py"
+
+Результат работы тестов:
+========================================== test session starts =================================
+platform win32 -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\zorka\PycharmProjects\pt_test\python_hw5
+plugins: anyio-2.1.0, Faker-8.8.1
+collected 5 items                                                                                                                                                                                                                                                          
+
+test_ohe.py .....                                                                                                                                                                                                                                                    [100%]
+
+========================================== 5 passed in 0.10s ===================================
+================================================================================================
+						issue-05
+Тесты для функции what_is_year_now с использованием unittest и pytest coverage
+================================================================================================
+Команда для запуска: ">python -m pytest --cov ."
+"python -m pytest --cov . --cov-report html" с генерацией отчетов в формате html
+
+Результат работы тестов:
+================================================================================================
+platform win32 -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\zorka\PycharmProjects\pt_test\python_hw5
+plugins: anyio-2.1.0, Faker-8.8.1, cov-3.0.0
+collected 19 items                                                                                                                                                                                                                                                         
+
+test_morse.py ......                 [ 31%]
+test_ohe.py .....                    [ 57%]
+test_ohe_unittest.py .....           [ 84%]
+test_year_unittest.py ...            [100%]
+
+----------- coverage: platform win32, python 3.8.5-final-0 -----------
+Name                    Stmts   Miss  Cover
+-------------------------------------------
+morse.py                   10      0   100%
+one_hot_encoder.py         14      0   100%
+test_morse.py               8      0   100%
+test_ohe.py                 8      0   100%
+test_ohe_unittest.py       21      0   100%
+test_year_unittest.py      33      0   100%
+what_is_year_now.py        20      0   100%
+-------------------------------------------
+TOTAL                     114      0   100%
+
+========================================= 19 passed in 0.58s ====================================
+
+
+>python_hw5>python -m pytest --cov . --cov-report html
+=================================== test session starts =========================================
+platform win32 -- Python 3.8.5, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: C:\Users\zorka\PycharmProjects\pt_test\python_hw5
+plugins: anyio-2.1.0, Faker-8.8.1, cov-3.0.0
+collected 19 items                                                                                                                                                                                                                                                         
+
+test_morse.py ......                                                                                                                                                                                                                                                 [ 31%]
+test_ohe.py .....                                                                                                                                                                                                                                                    [ 57%]
+test_ohe_unittest.py .....                                                                                                                                                                                                                                           [ 84%]
+test_year_unittest.py ...                                                                                                                                                                                                                                            [100%]
+
+----------- coverage: platform win32, python 3.8.5-final-0 -----------
+Coverage HTML written to dir htmlcov
+
+================================== 19 passed in 0.59s ===========================================
+
+
