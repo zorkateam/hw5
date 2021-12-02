@@ -1,6 +1,3 @@
-import doctest
-import unittest
-
 """Morse Code Translator"""
 
 LETTER_TO_MORSE = {
