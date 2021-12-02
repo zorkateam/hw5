@@ -35,6 +35,4 @@ class TestYear(unittest.TestCase):
         cm.read.return_value = '{"currentDateTime": "01/01/2022"}'
         cm.__enter__.return_value = cm
         mock_urlopen.return_value = cm
-
-        with urllib.request.urlopen('') as response:
-            self.assertRaises(ValueError, what_is_year_now, )
+        self.assertRaises(ValueError, what_is_year_now, )
